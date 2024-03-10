@@ -21,6 +21,8 @@ We welcome contributions from the community! If you'd like to contribute to Past
 ## Screenshots
 
 <img width="907" alt="Screenshot 2024-03-10 at 5 58 50 AM" src="https://github.com/PRATIKK0709/PastePal/assets/139443204/75741fb3-61d2-40de-9767-14329d7f3ff1">
+
+### 2
 <img width="898" alt="Screenshot 2024-03-10 at 6 00 48 AM" src="https://github.com/PRATIKK0709/PastePal/assets/139443204/7c90a5f9-8fb1-4e37-8bc0-04eb7c251010">
 
 

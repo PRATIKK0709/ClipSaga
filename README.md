@@ -18,6 +18,10 @@ We welcome contributions from the community! If you'd like to contribute to Past
 3. Make your changes and ensure that the code passes all tests.
 4. Open a pull request with a clear description of your changes.
 
+## Screenshots
+![Uploading Screenshot 2024-03-10 at 5.58.50 AM.png…]()
+
+
 
 ## Feedback and Support
 If you encounter any issues while using PastePal or have suggestions for improvements, please open an issue here.

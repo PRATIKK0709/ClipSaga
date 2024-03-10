@@ -20,4 +20,3 @@ struct VisualEffectBlur: NSViewRepresentable {
         // No update needed
     }
 }
-

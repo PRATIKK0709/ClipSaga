@@ -12,12 +12,8 @@ struct ContentView: View {
                     .font(.title)
                     .padding()
 
-                TextField("Search", text: $pastePalManager.searchQuery)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-
                 List {
-                    ForEach(pastePalManager.filteredItems) { item in
+                    ForEach(pastePalManager.clipboardItems) { item in
                         NavigationLink(destination: PasteDetailView(item: item)) {
                             HStack {
                                 Text(item.content)

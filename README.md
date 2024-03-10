@@ -19,11 +19,12 @@ We welcome contributions from the community! If you'd like to contribute to Past
 4. Open a pull request with a clear description of your changes.
 
 ## Screenshots
+<img width="897" alt="Screenshot 2024-03-10 at 3 56 32 PM" src="https://github.com/PRATIKK0709/PastePal/assets/139443204/55ff697f-d5ec-46e6-a041-23f75816091d">
 
-<img width="907" alt="Screenshot 2024-03-10 at 5 58 50 AM" src="https://github.com/PRATIKK0709/PastePal/assets/139443204/75741fb3-61d2-40de-9767-14329d7f3ff1">
 
 ### 2
-<img width="898" alt="Screenshot 2024-03-10 at 6 00 48 AM" src="https://github.com/PRATIKK0709/PastePal/assets/139443204/7c90a5f9-8fb1-4e37-8bc0-04eb7c251010">
+
+<img width="896" alt="Screenshot 2024-03-10 at 3 56 48 PM" src="https://github.com/PRATIKK0709/PastePal/assets/139443204/44045413-a68a-4c0c-9ca0-c3505afd270b">
 
 
 

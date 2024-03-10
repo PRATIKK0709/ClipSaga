@@ -4,6 +4,8 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject private var pastePalManager = PastePalManager()
     @State private var deletionConfirmation: ClipboardItem?
+    @State private var isClearingClipboard: Bool = false
+    @State private var showToast: Bool = false
 
     var body: some View {
         NavigationView {
@@ -25,6 +27,10 @@ struct ContentView: View {
 
                                 Button(action: {
                                     pastePalManager.copyToClipboard(item.content)
+                                    showToast = true
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                        showToast = false
+                                    }
                                 }) {
                                     Image(systemName: "doc.on.clipboard.fill")
                                         .foregroundColor(.blue)
@@ -59,10 +65,48 @@ struct ContentView: View {
                     )
                 }
 
-                Button("Clear Clipboard History") {
-                    pastePalManager.clearClipboard()
+                Text("Copied to clipboard!")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.black)
+                            .shadow(color: .blue, radius: showToast ? 10 : 0) // Adjust the radius for the glow effect
+                    )
+                    .cornerRadius(10)
+                    .opacity(showToast ? 1 : 0)
+                    .animation(.easeInOut(duration: 0.5))
+                    .padding(.bottom, 10)
+
+
+                Button(action: {
+                    if !pastePalManager.clipboardItems.isEmpty {
+                        pastePalManager.clearClipboard()
+                    } else {
+                        isClearingClipboard = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            isClearingClipboard = false
+                        }
+                    }
+                }) {
+                    HStack {
+                        Image(systemName: "trash.fill")
+                        Text("Clear Clipboard History")
+                    }
+                    .padding()
+                    .background(Color.red)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
                 }
-                .padding()
+                .buttonStyle(BorderlessButtonStyle())
+                .disabled(pastePalManager.clipboardItems.isEmpty)
+                .alert(isPresented: $isClearingClipboard) {
+                    Alert(
+                        title: Text("Clipboard Empty"),
+                        message: Text("There are no items to clear."),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
             }
             .padding()
             .frame(width: 400, height: 500)

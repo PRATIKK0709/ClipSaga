@@ -10,8 +10,6 @@ import SwiftUI
 
 class PastePalManager: ObservableObject {
     @Published var clipboardItems: [ClipboardItem] = []
-    @Published var filteredItems: [ClipboardItem] = []
-    @Published var searchQuery: String = ""
 
     init() {
         startClipboardMonitoring()
@@ -30,7 +28,6 @@ class PastePalManager: ObservableObject {
         if let newContent = NSPasteboard.general.string(forType: .string) {
             addItem(content: newContent)
         }
-        applySearchFilter()
     }
 
     private func loadClipboardItems() {
@@ -38,20 +35,11 @@ class PastePalManager: ObservableObject {
            let loadedItems = try? JSONDecoder().decode([ClipboardItem].self, from: data) {
             clipboardItems = loadedItems
         }
-        applySearchFilter()
     }
 
     private func saveClipboardItems() {
         if let encodedData = try? JSONEncoder().encode(clipboardItems) {
             UserDefaults.standard.set(encodedData, forKey: "clipboardItems")
-        }
-    }
-
-    private func applySearchFilter() {
-        if searchQuery.isEmpty {
-            filteredItems = clipboardItems
-        } else {
-            filteredItems = clipboardItems.filter { $0.content.localizedCaseInsensitiveContains(searchQuery) }
         }
     }
 
@@ -64,7 +52,6 @@ class PastePalManager: ObservableObject {
             clipboardItems.insert(newItem, at: 0)
         }
         saveClipboardItems()
-        applySearchFilter()
     }
 
     func copyToClipboard(_ content: String) {
@@ -76,13 +63,10 @@ class PastePalManager: ObservableObject {
         guard let index = clipboardItems.firstIndex(where: { $0.id == item.id }) else { return }
         clipboardItems.remove(at: index)
         saveClipboardItems()
-        applySearchFilter()
     }
 
     func clearClipboard() {
         clipboardItems.removeAll()
         saveClipboardItems()
-        applySearchFilter()
     }
 }
-

@@ -13,47 +13,39 @@ struct PasteDetailView: View {
 
     var body: some View {
         ScrollView {
-            VStack {
+            VStack(alignment: .leading, spacing: 16) {
                 Text("PastePal - Paste Detail")
                     .font(.title)
                     .padding()
 
                 Text(item.content)
+                    .font(.body)
                     .padding()
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(12)
 
-                HStack {
-                    Spacer()
-                    VStack {
-                        Text("Copied on: \(formattedDate(item.timestamp))")
-                        if let copiedFrom = item.copiedFrom {
-                            Text("Copied from: \(copiedFrom)")
-                        }
+                // Metadata Section
+                Section(header: Text("Metadata").font(.headline)) {
+                    if let copiedFrom = item.copiedFrom {
+                        Text("Copied from: \(copiedFrom)")
                     }
-                    Spacer()
+                    Text("Timestamp: \(formattedTimestamp(item.timestamp))")
+                    Text("Number of Words: \(wordCount(item.content))")
                 }
-                .padding()
-
-                Button(action: {
-                    NSPasteboard.general.clearContents()
-                    NSPasteboard.general.writeObjects([item.content as NSString])
-                }) {
-                    Image(systemName: "doc.on.clipboard.fill")
-                        .foregroundColor(.blue)
-                        .font(.system(size: 20))
-                        .padding()
-                }
-                .buttonStyle(BorderlessButtonStyle())
-
-                Spacer()
             }
             .padding()
+            .foregroundColor(.primary)
         }
     }
 
-    private func formattedDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
-        return formatter.string(from: date)
+    private func formattedTimestamp(_ timestamp: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy h:mm a"
+        return dateFormatter.string(from: timestamp)
+    }
+
+    private func wordCount(_ text: String) -> Int {
+        let words = text.components(separatedBy: .whitespacesAndNewlines)
+        return words.filter { !$0.isEmpty }.count
     }
 }

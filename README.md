@@ -7,7 +7,6 @@ PastePal is an open-source clipboard manager built with SwiftUI for macOS. It pr
 - Search through clipboard history to quickly find specific items.
 - Copy items from the history back to the clipboard with a single click.
 - Delete individual items or clear the entire clipboard history.
-- View detailed information about each copied item, including the timestamp and the application it was copied from.
 
 ## Getting Started
 To use PastePal, simply download the source code and open it in Xcode. Build and run the project to launch the application. PastePal requires macOS 10.15 or later.

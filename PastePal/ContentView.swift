@@ -1,3 +1,10 @@
+//
+//  ContentView.swift
+//  PastePal
+//
+//  Created by Pratik Ray on 10/03/24.
+//
+
 import SwiftUI
 
 

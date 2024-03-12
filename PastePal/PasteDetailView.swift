@@ -18,11 +18,21 @@ struct PasteDetailView: View {
                     .font(.title)
                     .padding()
 
-                Text(item.content)
-                    .font(.body)
-                    .padding()
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(12)
+                if item.contentType == .text {
+                    Text(item.content)
+                        .font(.body)
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(12)
+                } else if item.contentType == .image || item.contentType == .gif {
+                    // Placeholder for image or GIF display
+                    // You can customize this part based on your needs
+                    Text("Image or GIF Placeholder")
+                        .foregroundColor(.primary)
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(12)
+                }
 
                 // Metadata Section
                 Section(header: Text("Metadata").font(.headline)) {

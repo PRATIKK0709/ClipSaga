@@ -19,11 +19,13 @@ We welcome contributions from the community! If you'd like to contribute to Clip
 4. Open a pull request with a clear description of your changes.
 
 ## Screenshots
-<img width="897" alt="Screenshot 2024-03-10 at 3 56 32 PM" src="https://github.com/PRATIKK0709/PastePal/assets/139443204/55ff697f-d5ec-46e6-a041-23f75816091d">
+
+<img width="897" alt="Screenshot 2024-03-12 at 11 07 02 PM" src="https://github.com/PRATIKK0709/ClipSaga/assets/139443204/c0ac5a60-80ad-47a0-86bf-188e785453ca">
 
 ### 2
 
-<img width="896" alt="Screenshot 2024-03-10 at 3 56 48 PM" src="https://github.com/PRATIKK0709/PastePal/assets/139443204/44045413-a68a-4c0c-9ca0-c3505afd270b">
+<img width="897" alt="Screenshot 2024-03-12 at 11 07 18 PM" src="https://github.com/PRATIKK0709/ClipSaga/assets/139443204/7f37c928-27d0-442d-b211-efce8e2add2e">
+
 
 ## Feedback and Support
 If you encounter any issues while using ClipSaga or have suggestions for improvements, please open an issue here.

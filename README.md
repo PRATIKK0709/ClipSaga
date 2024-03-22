@@ -30,4 +30,14 @@ We welcome contributions from the community! If you'd like to contribute to Clip
 ## Feedback and Support
 If you encounter any issues while using ClipSaga or have suggestions for improvements, please open an issue here.
 
+## To-Do
+
+Here are some tasks that could enhance ClipSaga:
+
+- [ ] Improve UI as per the feedback
+- [ ] Add option to copy files.
+- [ ] Fix the gif and video copying.
+
+Feel free to pick up any of these tasks if you're interested in contributing to ClipSaga! If you have other ideas or suggestions, please share them with us through the issue tracker. Your contributions and feedback are greatly appreciated!
+
 Thank you for using ClipSaga!
